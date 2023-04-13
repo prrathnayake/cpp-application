@@ -1,8 +1,5 @@
 #include <iostream>
 
-#include <utils/index.h>
-#include <kafka/index.h>
-#include <rabbitMQ/index.h>
 #include <h3/index.h>
 #include <h3/h3api.h>
 
