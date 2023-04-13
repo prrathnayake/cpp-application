@@ -16,6 +16,8 @@ file(GLOB files
 find_package(app_utils CONFIG REQUIRED)
 find_package(app_kafka CONFIG REQUIRED)
 find_package(app_rabbitmq CONFIG REQUIRED)
+find_package(app_h3 CONFIG REQUIRED)
+find_package(h3 CONFIG REQUIRED)
 
 add_executable(${PROJECT_NAME} ${files})
 
@@ -23,4 +25,6 @@ target_link_libraries(${PROJECT_NAME}
      app_utils::app_utils
      app_kafka::app_kafka
      app_rabbitmq::app_rabbitmq
+     app_h3::app_h3
+     h3::h3
 )

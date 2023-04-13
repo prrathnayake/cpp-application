@@ -12,6 +12,7 @@ class BaseRecipe(ConanFile):
         self.requires("app_utils/1.0")
         self.requires("app_kafka/1.0")
         self.requires("app_rabbitmq/1.0")
+        self.requires("app_h3/1.0")
         
     def build(self):
         cmake = CMake(self)
