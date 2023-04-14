@@ -15,6 +15,22 @@ set(EXAMPLES
     utils
 )
 
+set(h3_DEPENDENCIES
+     app_h3::app_h3
+     h3::h3
+)
+set(kafka_DEPENDENCIES
+     app_kafka::app_kafka
+     app_utils::app_utils
+)
+set(rabbitMQ_DEPENDENCIES
+     app_rabbitmq::app_rabbitmq
+     app_utils::app_utils
+)
+set(utils_DEPENDENCIES
+     app_utils::app_utils
+)
+
 find_package(app_utils CONFIG REQUIRED)
 find_package(app_kafka CONFIG REQUIRED)
 find_package(app_rabbitmq CONFIG REQUIRED)
@@ -22,29 +38,9 @@ find_package(app_h3 CONFIG REQUIRED)
 find_package(h3 CONFIG REQUIRED)
 
 foreach(name ${EXAMPLES})
-     if(${name} STREQUAL "h3")
-          add_executable(${name} "${name}.cpp")
-          target_link_libraries(${name}
-               app_h3::app_h3
-               h3::h3
-          )
-     elseif(${name} STREQUAL "kafka")
-          add_executable(${name} "${name}.cpp")
-          target_link_libraries(${name}
-               app_kafka::app_kafka
-               app_utils::app_utils
-          )
-     elseif(${name} STREQUAL "rabbitMQ")
-          add_executable(${name} "${name}.cpp")
-          target_link_libraries(${name}
-               app_rabbitmq::app_rabbitmq
-               app_utils::app_utils
-          )
-     elseif(${name} STREQUAL "utils")
-          add_executable(${name} "${name}.cpp")
-          target_link_libraries(${name}
-               app_utils::app_utils
-          )
-     endif()
+     add_executable(${name} "./src/${name}.cpp")
+     foreach(dep ${${name}_DEPENDENCIES})
+          target_link_libraries(${name} ${dep})
+     endforeach()
+     
 endforeach()
-
