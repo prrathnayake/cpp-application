@@ -12,6 +12,7 @@ set(EXAMPLES
     h3
     kafka
     rabbitMQ
+    utils
 )
 
 find_package(app_utils CONFIG REQUIRED)
@@ -37,6 +38,11 @@ foreach(name ${EXAMPLES})
           add_executable(${name} "${name}.cpp")
           target_link_libraries(${name}
                app_rabbitmq::app_rabbitmq
+               app_utils::app_utils
+          )
+     elseif(${name} STREQUAL "utils")
+          add_executable(${name} "${name}.cpp")
+          target_link_libraries(${name}
                app_utils::app_utils
           )
      endif()
