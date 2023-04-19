@@ -13,6 +13,7 @@ set(EXAMPLES
     kafka
     rabbitMQ
     utils
+    error
 )
 
 set(h3_DEPENDENCIES
@@ -30,6 +31,9 @@ set(rabbitMQ_DEPENDENCIES
 set(utils_DEPENDENCIES
      app_utils::app_utils
 )
+set(error_DEPENDENCIES
+     app_utils::app_utils
+)
 
 find_package(app_utils CONFIG REQUIRED)
 find_package(app_kafka CONFIG REQUIRED)
@@ -41,6 +45,5 @@ foreach(name ${EXAMPLES})
      add_executable(${name} "./src/${name}.cpp")
      foreach(dep ${${name}_DEPENDENCIES})
           target_link_libraries(${name} ${dep})
-     endforeach()
-     
+     endforeach()   
 endforeach()

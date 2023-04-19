@@ -9,10 +9,10 @@ class BaseRecipe(ConanFile):
     generators = "CMakeDeps", "CMakeToolchain"
 
     def requirements(self):
-        self.requires("app_utils/1.0")
-        self.requires("app_kafka/1.0")
-        self.requires("app_rabbitmq/1.0")
-        self.requires("app_h3/1.0")
+        self.requires("app_utils/1.0@pasan/testing")
+        self.requires("app_kafka/1.0@pasan/testing")
+        self.requires("app_rabbitmq/1.0@pasan/testing")
+        self.requires("app_h3/1.0@pasan/testing")
         
     def build(self):
         cmake = CMake(self)
