@@ -19,12 +19,6 @@ int main()
 
     blockchain::Transtraction transtraction1(privateKey, publicKey, "key1", "10");
     blockchain.addNewTranstraction(transtraction1);
-    
-    if(transtraction1.isValidateSignature()){
-        std::cout << "Valid\n";
-    }else{
-         std::cout << "Not Valid\n";
-    }
 
     blockchain::Transtraction transtraction2(privateKey, publicKey, "key2", "20");
     blockchain.addNewTranstraction(transtraction2);
