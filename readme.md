@@ -13,7 +13,6 @@ Clone all cpp-tools, cpp-base and cpp-application. Then check this repos to inst
 git clone https://github.com/prrathnayake/cpp-application.git
 git clone https://github.com/prrathnayake/cpp-base.git
 git clone https://github.com/prrathnayake/cpp-tools.git
-
 ```
 Create packages using Conan2
 ```
