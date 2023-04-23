@@ -2,7 +2,7 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, cmake_layout
 
 class BaseRecipe(ConanFile):
-    name = "ccpp_application"
+    name = "cpp_application"
     version = "1.0"
     
     settings = "os", "compiler", "build_type", "arch"
