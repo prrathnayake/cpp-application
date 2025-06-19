@@ -1,0 +1,1 @@
+. "/home/pasan/PROJECTS/cpp/cpp-application/conanrunenv-release-x86_64.sh"
