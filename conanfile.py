@@ -15,6 +15,7 @@ class BaseRecipe(ConanFile):
         self.requires("app_h3/1.0@pasan/testing")
         self.requires("app_blockchain/1.0@pasan/testing")
         self.requires("app_algorithms/1.0@pasan/testing")
+        self.requires("app_database/1.0@pasan/testing")
         
     def build(self):
         cmake = CMake(self)

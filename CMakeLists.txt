@@ -16,6 +16,7 @@ set(EXAMPLES
     error
     algorithms
     blockchain
+    database
 )
 
 set(h3_DEPENDENCIES
@@ -42,7 +43,9 @@ set(algorithms_DEPENDENCIES
 set(blockchain_DEPENDENCIES
      app_blockchain::app_blockchain
 )
-
+set(database_DEPENDENCIES
+     app_database::app_database
+)
 
 find_package(app_utils CONFIG REQUIRED)
 find_package(app_kafka CONFIG REQUIRED)
@@ -51,7 +54,7 @@ find_package(app_h3 CONFIG REQUIRED)
 find_package(h3 CONFIG REQUIRED)
 find_package(app_algorithms CONFIG REQUIRED)
 find_package(app_blockchain CONFIG REQUIRED)
-
+find_package(app_database CONFIG REQUIRED)
 
 foreach(name ${EXAMPLES})
      add_executable(${name} "./src/${name}.cpp")
